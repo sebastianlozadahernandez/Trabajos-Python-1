@@ -1,0 +1,120 @@
+Sebastián Lozada Hernández
+
+#PARTE 1
+# Datos del documento
+titulo = "Taller Práctico con Strings"
+autor = "Sebastián Lozada Hernández"
+institucion = "Universidad Nacional de Colombia"
+fecha = "25 de octubre de 2025"
+
+# Encabezado concatenado
+encabezado = titulo + ", " + autor + ", " + institucion + ", " + fecha
+print("Encabezado del documento:")
+print(encabezado)
+
+# Bibliografía
+bibliografia = "1. Smith, J. (2020). Machine Learning Fundamentals.\n"
+bibliografia += "2. García, M. (2021). Data Analysis Techniques.\n"
+bibliografia += "3. Lee, K. (2023). Python for Research.\n"
+
+print("\nBibliografía:")
+print(bibliografia)
+
+#DOI
+prefijo = "10.1000"
+sufijo = "182"
+version = "v1"
+
+doi = prefijo + "/" + sufijo + "." + version
+print("\nDOI generado:")
+print(doi)
+
+#PARTE 2
+# INSTRUCCIONES: Crea elementos visuales para interfaz
+separador = " "
+encabezado = "SISTEMA UNIVERSITARIO DE CALIFICACIONES"
+calificacion = "★"
+estrella_vacia = "☆"
+nota = 4.5
+
+# Construye el encabezado con separadores
+linea_encabezado = separador * 10 + " " + encabezado + " " + separador * 10
+print(linea_encabezado)
+
+# Calcula estrellas según la nota (de 5)
+estrellas_llenas = int(nota)  # número entero de estrellas llenas
+mitad = nota - estrellas_llenas  # si hay media estrella
+estrellas = calificacion * estrellas_llenas
+
+if mitad >= 0.5:
+    estrellas += estrella_vacia  # representa media o incompleta
+estrellas += estrella_vacia * (5 - len(estrellas))  # completa hasta 5
+
+# Muestra la calificación formateada
+print(f"#Calificación: {estrellas} ({nota}/5)")
+
+#PARTE 3
+# INSTRUCCIONES: Analiza longitudes de textos universitarios
+resumen = "El presente artículo expone los resultados de un estudio orientado al desarrollo de un modelo de machine learning para la predicción del comportamiento de consumo energético en entornos urbanos, utilizando técnicas avanzadas de análisis de datos. Se recopiló un conjunto de más de 500 000 registros provenientes de sensores inteligentes instalados en la red eléctrica de tres ciudades latinoamericanas. Mediante un proceso de limpieza, normalización y transformación de datos, se identificaron patrones relevantes asociados con variables como temperatura ambiental, hora del día y tipo de zona residencial.  El análisis exploratorio permitió detectar correlaciones significativas y anomalías de consumo que fueron modeladas mediante algoritmos supervisados, incluyendo Random Forest, XGBoost y redes neuronales profundas (Deep Neural Networks). Los resultados experimentales mostraron que el modelo basado en XGBoost alcanzó la mayor precisión, con un R de 0.94 y un MAE promedio de 0.18, superando en un 12% a los métodos tradicionales de regresión lineal. Además, se desarrolló un tablero interactivo de visualización que permite monitorear en tiempo real las predicciones y el rendimiento energético por sector. Se concluye que la integración de técnicas de machine learning con sistemas de monitoreo urbano represe0nta una herramienta estratégica para la optimización del uso de recursos y la planificación energética sostenible"
+titulo = "Predicción del consumo energético urbano mediante técnicas de análisis de datos y machine learning"
+nombre_completo = "María José Rodríguez Hernández"
+
+# 1. Calcular la longitud (número de caracteres)
+longitud_resumen = len(resumen)
+longitud_titulo = len(titulo)
+longitud_nombre = len(nombre_completo)
+
+# 2. Mostrar resultados
+print("        Análisis de Longitudes        ")
+print(f"Longitud del resumen: {longitud_resumen} caracteres")
+print(f"Longitud del título: {longitud_titulo} caracteres")
+print(f"Longitud del nombre: {longitud_nombre} caracteres")
+
+# 3. Ejemplo adicional: cuántas palabras tiene el resumen
+palabras_resumen = len(resumen.split())
+print(f"Número de palabras en el resumen: {palabras_resumen}")
+
+#PARTE 4
+# Verifica contenido en textos académicos
+
+# Palabras clave en el resumen del punto anterior:
+# Análisis de datos, Machine learning, Consumo energético, Modelos predictivos
+
+palabras_clave = ["análisis de datos", "machine learning", "consumo energético", "modelos predictivos"]
+
+# Reutilizamos el resumen de la parte anterior
+resumen = "El presente artículo expone los resultados de un estudio orientado al desarrollo de un modelo de machine learning para la predicción del comportamiento de consumo energético en entornos urbanos, utilizando técnicas avanzadas de análisis de datos. Se recopiló un conjunto de más de 500 000 registros provenientes de sensores inteligentes instalados en la red eléctrica de tres ciudades latinoamericanas. Mediante un proceso de limpieza, normalización y transformación de datos, se identificaron patrones relevantes asociados con variables como temperatura ambiental, hora del día y tipo de zona residencial.  El análisis exploratorio permitió detectar correlaciones significativas y anomalías de consumo que fueron modeladas mediante algoritmos supervisados, incluyendo Random Forest, XGBoost y redes neuronales profundas (Deep Neural Networks). Los resultados experimentales mostraron que el modelo basado en XGBoost alcanzó la mayor precisión, con un R de 0.94 y un MAE promedio de 0.18, superando en un 12% a los métodos tradicionales de regresión lineal. Además, se desarrolló un tablero interactivo de visualización que permite monitorear en tiempo real las predicciones y el rendimiento energético por sector. Se concluye que la integración de técnicas de machine learning con sistemas de monitoreo urbano represe0nta una herramienta estratégica para la optimización del uso de recursos y la planificación energética sostenible"
+
+# Convertimos todo a minúsculas para comparar sin errores por mayúsculas
+resumen_lower = resumen.lower()
+
+# 1. Verifica si cada palabra clave está en el resumen y cuántas veces aparece
+print("       Verificación de palabras clave      ")
+
+for palabra in palabras_clave:
+    palabra_lower = palabra.lower()
+    if palabra_lower in resumen_lower:
+        conteo = resumen_lower.count(palabra_lower)
+        print(f"'{palabra}' está en el resumen ({conteo} vez/veces).")
+    else:
+        print(f"'{palabra}' NO aparece en el resumen.")
+
+#PARTE 5
+# Normaliza datos de entrada de usuario
+
+# INSTRUCCIONES: Normaliza datos de entrada de usuario
+entrada_usuario = "  ANA MARÍA GARCÍA  "
+titulo_libro = "introducción a la PROGRAMACIÓN en PYTHON"
+
+# 1. Normaliza el nombre: primera letra mayúscula, resto minúsculas, sin espacios
+nombre_normalizado = entrada_usuario.strip().title()  # Quita espacios y pone mayúscula en cada palabra
+print("1. Nombre normalizado:", nombre_normalizado)
+
+# 2. Convierte el título del libro a formato título (cada palabra capitalizada)
+titulo_normalizado = titulo_libro.title()
+print("2. Título normalizado:", titulo_normalizado)
+
+# 3. Crea un email institucional: nombre.apellido@universidad.edu en minúsculas
+partes_nombre = nombre_normalizado.split()  # Divide en palabras (por espacios)
+email_institucional = f"{partes_nombre[0].lower()}.{partes_nombre[1].lower()}@udea.edu"
+print("3. Email institucional:", email_institucional)
